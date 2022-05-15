@@ -42,78 +42,44 @@ function selection(element){
 
     if(playerSelection == playerHuman){
         humanArray.push(element.target.id);
-        validationHuman();
+        validation(humanArray);
         playerSelection = playerComputer
     } else{
         computerArray.push(element.target.id);
-        validationComputer();
+        validation(computerArray);
         playerSelection = playerHuman
     }
 };
 
-function validationHuman(){
+function validation(array){
     for (var i=0; i < winOptions.length; i++){
         const winArray = winOptions[i];
         let position1 = [winArray[0]],
         position2 = [winArray[1]],
         position3 = [winArray[2]]
 
-    if (position1.includes(humanArray[0]) && position2.includes(humanArray[1]) && position3.includes(humanArray[2])) {
-        console.log('Human Wins')
+    if (position1.includes(array[0]) && position2.includes(array[1]) && position3.includes(array[2])) {
+        console.log(`${playerSelection} Wins`)
         setTimeout(resetGame, 1000);
     }
-    if (position1.includes(humanArray[0]) && position2.includes(humanArray[2]) && position3.includes(humanArray[1])) {
-        console.log('Human Wins')
+    if (position1.includes(array[0]) && position2.includes(array[2]) && position3.includes(array[1])) {
+        console.log(`${playerSelection} Wins`)
         setTimeout(resetGame, 1000);
     }
-    if (position1.includes(humanArray[1]) && position2.includes(humanArray[0]) && position3.includes(humanArray[2])) {
-        console.log('Human Wins')
+    if (position1.includes(array[1]) && position2.includes(array[0]) && position3.includes(array[2])) {
+        console.log(`${playerSelection} Wins`)
         setTimeout(resetGame, 1000);
     }
-    if (position1.includes(humanArray[1]) && position2.includes(humanArray[2]) && position3.includes(humanArray[0])) {
-        console.log('Human Wins')
+    if (position1.includes(array[1]) && position2.includes(array[2]) && position3.includes(array[0])) {
+        console.log(`${playerSelection} Wins`)
         setTimeout(resetGame, 1000);
     }
-    if (position1.includes(humanArray[2]) && position2.includes(humanArray[1]) && position3.includes(humanArray[0])) {
-        console.log('Human Wins')
+    if (position1.includes(array[2]) && position2.includes(array[1]) && position3.includes(array[0])) {
+        console.log(`${playerSelection} Wins`)
         setTimeout(resetGame, 1000);
     }
-    if (position1.includes(humanArray[2]) && position2.includes(humanArray[0]) && position3.includes(humanArray[1])) {
-        console.log('Human Wins')
-        setTimeout(resetGame, 1000);
-    } 
-  }
-};
-
-function validationComputer(){
-    for (var i=0; i < winOptions.length; i++){
-        const winArray = winOptions[i];
-        let position1 = [winArray[0]],
-        position2 = [winArray[1]],
-        position3 = [winArray[2]]
-
-    if (position1.includes(computerArray[0]) && position2.includes(computerArray[1]) && position3.includes(computerArray[2])) {
-        console.log('Computer Wins')
-        setTimeout(resetGame, 1000);
-    }
-    if (position1.includes(computerArray[0]) && position2.includes(computerArray[2]) && position3.includes(computerArray[1])) {
-        console.log('Computer Wins')
-        setTimeout(resetGame, 1000);
-    }
-    if (position1.includes(computerArray[1]) && position2.includes(computerArray[0]) && position3.includes(computerArray[2])) {
-        console.log('Computer Wins')
-        setTimeout(resetGame, 1000);
-    }
-    if (position1.includes(computerArray[1]) && position2.includes(computerArray[2]) && position3.includes(computerArray[0])) {
-        console.log('Computer Wins')
-        setTimeout(resetGame, 1000);
-    }
-    if (position1.includes(computerArray[2]) && position2.includes(computerArray[1]) && position3.includes(computerArray[0])) {
-        console.log('Computer Wins')
-        setTimeout(resetGame, 1000);
-    }
-    if (position1.includes(computerArray[2]) && position2.includes(computerArray[0]) && position3.includes(computerArray[1])) {
-        console.log('Computer Wins')
+    if (position1.includes(array[2]) && position2.includes(array[0]) && position3.includes(array[1])) {
+        console.log(`${array} Wins`)
         setTimeout(resetGame, 1000);
     }
   }
