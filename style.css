@@ -48,9 +48,15 @@ body {
 }
 
 .field {
+    min-height: 13rem;
     border-radius: 1rem;
     background-color: var(--color-cuaternario);
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    color: var(--color-primario);
 }
 
 .btn-container{
@@ -81,7 +87,6 @@ body {
 	position:relative;
 	top:1px;
 }
-
 
 .footer{
     display: flex;
