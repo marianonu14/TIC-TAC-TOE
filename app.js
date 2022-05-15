@@ -42,24 +42,79 @@ function selection(element){
 
     if(playerSelection == playerHuman){
         humanArray.push(element.target.id);
-        validation();
+        validationHuman();
         playerSelection = playerComputer
-    } else {
+    } else{
         computerArray.push(element.target.id);
-        validation();
+        validationComputer();
         playerSelection = playerHuman
     }
 };
 
-function validation(){
+function validationHuman(){
     for (var i=0; i < winOptions.length; i++){
-        console.log(winOptions[i].some(array => array.includes(humanArray)));
-    }   
+        const winArray = winOptions[i];
+        let position1 = [winArray[0]],
+        position2 = [winArray[1]],
+        position3 = [winArray[2]]
+
+    if (position1.includes(humanArray[0]) && position2.includes(humanArray[1]) && position3.includes(humanArray[2])) {
+        console.log('Human Wins')
+        setTimeout(resetGame, 1000);
+    }
+    if (position1.includes(humanArray[0]) && position2.includes(humanArray[2]) && position3.includes(humanArray[1])) {
+        console.log('Human Wins')
+        setTimeout(resetGame, 1000);
+    }
+    if (position1.includes(humanArray[1]) && position2.includes(humanArray[0]) && position3.includes(humanArray[2])) {
+        console.log('Human Wins')
+        setTimeout(resetGame, 1000);
+    }
+    if (position1.includes(humanArray[1]) && position2.includes(humanArray[2]) && position3.includes(humanArray[0])) {
+        console.log('Human Wins')
+        setTimeout(resetGame, 1000);
+    }
+    if (position1.includes(humanArray[2]) && position2.includes(humanArray[1]) && position3.includes(humanArray[0])) {
+        console.log('Human Wins')
+        setTimeout(resetGame, 1000);
+    }
+    if (position1.includes(humanArray[2]) && position2.includes(humanArray[0]) && position3.includes(humanArray[1])) {
+        console.log('Human Wins')
+        setTimeout(resetGame, 1000);
+    } 
+  }
+};
+
+function validationComputer(){
+    for (var i=0; i < winOptions.length; i++){
+        const winArray = winOptions[i];
+        let position1 = [winArray[0]],
+        position2 = [winArray[1]],
+        position3 = [winArray[2]]
+
+    if (position1.includes(computerArray[0]) && position2.includes(computerArray[1]) && position3.includes(computerArray[2])) {
+        console.log('Computer Wins')
+        setTimeout(resetGame, 1000);
+    }
+    if (position1.includes(computerArray[0]) && position2.includes(computerArray[2]) && position3.includes(computerArray[1])) {
+        console.log('Computer Wins')
+        setTimeout(resetGame, 1000);
+    }
+    if (position1.includes(computerArray[1]) && position2.includes(computerArray[0]) && position3.includes(computerArray[2])) {
+        console.log('Computer Wins')
+        setTimeout(resetGame, 1000);
+    }
+    if (position1.includes(computerArray[1]) && position2.includes(computerArray[2]) && position3.includes(computerArray[0])) {
+        console.log('Computer Wins')
+        setTimeout(resetGame, 1000);
+    }
+    if (position1.includes(computerArray[2]) && position2.includes(computerArray[1]) && position3.includes(computerArray[0])) {
+        console.log('Computer Wins')
+        setTimeout(resetGame, 1000);
+    }
+    if (position1.includes(computerArray[2]) && position2.includes(computerArray[0]) && position3.includes(computerArray[1])) {
+        console.log('Computer Wins')
+        setTimeout(resetGame, 1000);
+    }
+  }
 }
-
-
-const array1 = [0,1,3];
-
-const array2 = [0,1,3];
-
-console.log(array1.includes(0, 1));
