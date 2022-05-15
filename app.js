@@ -28,7 +28,8 @@ function startGame(){
     }); 
 }
 function resetGame(){
-    containerBoard = [];
+    humanArray = [];
+    computerArray = [];
 
     for (var i=0; i < fieldElements.length; i++){
         fieldElements[i].innerText = ''
@@ -41,15 +42,24 @@ function selection(element){
 
     if(playerSelection == playerHuman){
         humanArray.push(element.target.id);
-        playerSelection = playerComputer
         validation();
+        playerSelection = playerComputer
     } else {
         computerArray.push(element.target.id);
-        playerSelection = playerHuman
         validation();
+        playerSelection = playerHuman
     }
 };
 
 function validation(){
-    console.log('VALIDANDO...')
+    for (var i=0; i < winOptions.length; i++){
+        console.log(winOptions[i].some(array => array.includes(humanArray)));
+    }   
 }
+
+
+const array1 = [0,1,3];
+
+const array2 = [0,1,3];
+
+console.log(array1.includes(0, 1));
